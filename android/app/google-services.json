@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "278811932024",
+    "project_id": "blast-8eec2",
+    "storage_bucket": "blast-8eec2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278811932024:android:26a469a8ffcb871585048d",
+        "android_client_info": {
+          "package_name": "app.blast"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278811932024-hs5fgdlvg3shn1776fdgiv6ot88q3fnm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0Mv68bNCaR4r5r4i2LK0DVnEYorBbvF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278811932024-hs5fgdlvg3shn1776fdgiv6ot88q3fnm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
