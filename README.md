@@ -6,3 +6,6 @@
 > **For Design**  
 * Adobe Xd 
 
+> **For Development**  
+* Flutter
+* Firebase
