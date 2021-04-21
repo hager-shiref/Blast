@@ -1,6 +1,6 @@
-# blast
+# Blast
 
-A new Flutter application.
+> put here the description
 
 ## Getting Started
 
