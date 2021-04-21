@@ -3,6 +3,6 @@
 > put here the description
 
 ## Tools used in this project
-> **For Design : **  
+> **For Design**  
 * Adobe Xd 
 
