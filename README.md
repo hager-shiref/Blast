@@ -12,6 +12,11 @@
 * Flutter
 * Firebase
 
+## Flutter UI
+![](https://github.com/hager-shiref/blast/blob/main/flutter%20ui/BLASTn.gif)
+
+<br>
+
 ## User Interface
 ![](https://github.com/hager-shiref/blast/blob/main/App%20screens/001.jpg)
 ![](https://github.com/hager-shiref/blast/blob/main/App%20screens/002.jpg)
@@ -26,5 +31,6 @@
 ![](https://github.com/hager-shiref/blast/blob/main/App%20screens/011.jpg)
 ![](https://github.com/hager-shiref/blast/blob/main/App%20screens/012.jpg)
 ![](https://github.com/hager-shiref/blast/blob/main/App%20screens/013.jpg)
+
 
 
