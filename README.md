@@ -14,7 +14,6 @@
 
 ## User Interface
 ![](https://github.com/hager-shiref/blast/blob/main/App%20screens/001.jpg)
-<br>
 ![](https://github.com/hager-shiref/blast/blob/main/App%20screens/002.jpg)
 ![](https://github.com/hager-shiref/blast/blob/main/App%20screens/003.jpg)
 ![](https://github.com/hager-shiref/blast/blob/main/App%20screens/004.jpg)
