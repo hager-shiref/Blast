@@ -14,3 +14,17 @@
 
 ## User Interface
 ![](https://github.com/hager-shiref/blast/blob/main/App%20screens/001.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/002.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/003.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/004.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/005.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/006.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/007.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/008.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/009.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/010.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/011.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/012.jpg)
+![](https://github.com/hager-shiref/blast/blob/main/App%20screens/013.jpg)
+
+
