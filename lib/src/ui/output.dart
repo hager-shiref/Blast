@@ -10,7 +10,6 @@ var retrevedData=" ";
 var dataa;
 final db=FirebaseDatabase.instance;
    final ref=db.reference().child('data');
-     // ignore: top_level_function_literal_block
      final data=ref.child('description').once().then((DataSnapshot data){
          retrevedData=data.value;
          dataa=data;
