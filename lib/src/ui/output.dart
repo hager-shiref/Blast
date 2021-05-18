@@ -24,10 +24,10 @@ class _OutputState extends State<Output> {
 
   @override
   Widget build(BuildContext context) {
-    // Blast b=Blast();
-    // double? m=Blast.alignment_score;
-    // double  match=0;
-    // if(m !=null)   match=m*100;
+     //Blast b=Blast();
+     //double? m=Blast.alignment_score;
+     double  match=0;
+   // if(m !=null)   match=m*100;
     return Scaffold(
         backgroundColor: Color(0xff4a707a),
         appBar: AppBar(
