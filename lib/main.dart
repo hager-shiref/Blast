@@ -1,5 +1,4 @@
 
-import 'package:untitled/model/controller.dart';
 
 import 'src/ui/splash.dart';
 import 'package:flutter/material.dart';

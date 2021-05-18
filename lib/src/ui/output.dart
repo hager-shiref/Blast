@@ -4,16 +4,14 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:provider/provider.dart';
-import 'package:untitled/model/controller.dart';
-import 'package:untitled/blastn/blastn.dart';
-var retrevedData=" ";
-var dataa;
+//var retrevedData=" ";
+/*var dataa;
 final db=FirebaseDatabase.instance;
    final ref=db.reference().child('data');
      final data=ref.child('description').once().then((DataSnapshot data){
          retrevedData=data.value;
          dataa=data;
-       });
+       });*/
 class Output extends StatefulWidget {
      TextEditingController query = TextEditingController();
     Output(this.query);
@@ -24,10 +22,10 @@ class _OutputState extends State<Output> {
 
   @override
   Widget build(BuildContext context) {
-    // Blast b=Blast();
-    // double? m=Blast.alignment_score;
-    // double  match=0;
-    // if(m !=null)   match=m*100;
+     //Blast b=Blast();
+     //double? m=Blast.alignment_score;
+     double  match=0;
+   // if(m !=null)   match=m*100;
     return Scaffold(
         backgroundColor: Color(0xff4a707a),
         appBar: AppBar(
@@ -48,7 +46,7 @@ class _OutputState extends State<Output> {
             },
           ),
         ),
-        body: Center(child:Text('${retrevedData.toString()}',style: TextStyle(color: Colors.white),
+        body: Center(child:Text('',style: TextStyle(color: Colors.white),
          ),));
     //     body:  FutureBuilder(
     //       future: dataa,
