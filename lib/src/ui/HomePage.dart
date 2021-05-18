@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:untitled/src/ui/Articels.dart';
 import 'package:untitled/style/appcolors.dart';
@@ -291,12 +290,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   showAlertDialog(BuildContext context) {
-    // set up the button
-    Widget okButton = FlatButton(
-      child: Text("OK"),
-      onPressed: () {},
-    );
-
     // set up the AlertDialog
     AlertDialog alert = AlertDialog(
       title: Text(
