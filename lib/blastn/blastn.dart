@@ -267,7 +267,7 @@ List getWordsPosition(String word){
                       candidate_sequence= candidate_sequence.sublist(i_start , -i_end);
                      List <dynamic>  align_seq = SMalignment(candidate_sequence,querySeq)!;
 
-                    Text( '${display(align_seq[0], align_seq[1])}');
+                    return display(align_seq[0], align_seq[1]);
 
               }
 
