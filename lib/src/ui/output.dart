@@ -36,7 +36,18 @@ class _OutputState extends State<Output> {
           },
         ),
       ),
-      body: Container(
+      body: FutureBuilder(builder: (BuildContext context ,AsyncSnapshot snapshot){
+        if(snapshot.hasError)
+        {
+           print(snapshot.error);
+         }
+              if(snapshot.connectionState==ConnectionState.none||snapshot.connectionState==ConnectionState.waiting){
+                print("data has not been fetched yet");
+                return Center(child: CircularProgressIndicator());
+            }
+            else{
+              if(snapshot.hasData){
+                return Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
@@ -66,6 +77,7 @@ class _OutputState extends State<Output> {
                 padding: EdgeInsets.all(10),
                 child: Column(
                   children: [
+                    _blast.blastAlgorithm(widget.query.toString())?CircularProgressIndicator():
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -82,7 +94,13 @@ class _OutputState extends State<Output> {
             )
           ],
         ),
-      ),
+      );
+              }
+                           print("No data found");
+                 return Text("No data found");
+             
+            }
+      })
     );
   }
 }
