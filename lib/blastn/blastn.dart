@@ -149,26 +149,26 @@ num wordToIndex(String word,int wordlen){
   }  
   return tmp;
 }
-// List getWordsPosition(String word){
-//   // assert (word.length==11);
-//    num seekIndex=wordToIndex(word,11-1);
-//    List positions=<Map>[];
+List getWordsPosition(String word){
+  // assert (word.length==11);
+   num seekIndex=wordToIndex(word,11-1);
+   List positions=<Map>[];
   
-//    for(int chrNames=0;chrNames<blast.length;chrNames++){
+   for(int chrNames=0;chrNames<blast.length;chrNames++){
 
-//      String chrSeq=blast;
-//       String position= chrSeq.substring((seekIndex as int) ,1) ;
-//       try{
-//           positions.add(position[0][-1].split(','));
-//       }
-//       catch (e){
-//           positions.add([]);
-//       }
+     String chrSeq=blast;
+      String position= chrSeq.substring((seekIndex as int) ,1) ;
+      try{
+          positions.add(position[0][-1].split(','));
+      }
+      catch (e){
+          positions.add([]);
+      }
       
-//    }
-//    return positions;
+   }
+   return positions;
   
-//  }
+ }
  
  String extractSeq(int chrIndex,int pos,int lenght)
  {
@@ -201,7 +201,7 @@ num wordToIndex(String word,int wordlen){
     }
     List words_position=[];
     for ( String word in query_words){
-      words_position.add('Chromosome');
+      words_position.add(getWordsPosition(word));
     }
     for(int chr_index =0;chr_index<24;chr_index++){
       for (int word_index=0; word_index<wordsLenght;word_index++){
