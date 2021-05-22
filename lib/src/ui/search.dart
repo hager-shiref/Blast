@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:untitled/blastn/blastn.dart';
+import 'package:untitled/model/model.dart';
 import 'output.dart';
 
 class SearchPage extends StatefulWidget {
@@ -13,6 +14,7 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
    TextEditingController query = TextEditingController();
 final GlobalKey<FormState>_globalKey=GlobalKey<FormState>();
+Blast _blast=Blast();
 
   @override
   Widget build(BuildContext context) {
@@ -116,6 +118,8 @@ final GlobalKey<FormState>_globalKey=GlobalKey<FormState>();
                     onPressed: () {
                       Navigator.pushReplacement(context,
                           MaterialPageRoute(builder: (context) => Output(query)));
+                        //  _blast.blastAlgorithm(query.toString());
+                          _blast.SMalignment(BlastModel['Chromosome'], query.toString());
 
                     },
                     child: Text(

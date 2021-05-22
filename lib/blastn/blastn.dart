@@ -1,42 +1,53 @@
 import 'dart:math';
-import 'package:flutter/cupertino.dart';
 import 'package:untitled/model/model.dart';
 class Blast{
+
 String blast= BlastModel['Chromosome'];
   static double alignment_score=0;
+ static List <dynamic>  align_seq=[];
+ static var aligns=[];
   //compare single base
+
 int SingleBaseCompare(String seq1,String seq2,int i,int j){
-  if(seq1[i] == seq2[j])return 2;
-  else return -1;
+  if(seq1[i] == seq2[j]) {
+    return 2;
+  } else {
+    return -1;
+  }
 }
-List ?SMalignment(String seq1,String seq2){
-    int m=seq1.length;
-    int n=seq2.length;
-   int g=-3;
-   List matrix=[];
-   for(int i=0;i<m;i++){
-     List tmp=[];
-     for(int j=0;j<n;j++){
+ List SMalignment(String seq1,String seq2){
+    var m=seq1.length;
+    var n=seq2.length;
+   var g=-3;
+   var matrix=[];
+   for(var i=0;i<m;i++){
+     var tmp=[];
+     for(var j=0;j<n;j++){
        tmp.add(0);
      }
      matrix.add(tmp);
      }
-    for (int sii=0;sii<m;sii++){
+      for (var sii=0;sii<m;sii++){
       matrix[sii][0]=sii*g;
     }
-for (int sjj=0;sjj<n;sjj++){
+for (var sjj=0;sjj<n;sjj++){
       matrix[sjj][0]=sjj*g;
+
     }
-  for(int siii=0;siii<m;siii++){
-      for(int sjjj=0;sjjj<n;sjjj++){
-     matrix[siii][sjjj] =([matrix[siii-1][sjjj] + g , matrix[siii - 1][sjjj - 1] + SingleBaseCompare(seq1,seq2,siii, sjjj), matrix[siii][sjjj-1] + g]).reduce((value, element) => value>element?value:element);
+  for(var siii=1;siii<m;siii++){
+      for(var sjjj=1;sjjj<n;sjjj++){
+        var m=matrix[siii-1][sjjj] + g;
+        var i=matrix[siii - 1][sjjj - 1] + SingleBaseCompare(seq1,seq2,siii, sjjj);
+        var j=matrix[siii][sjjj-1] + g;
+         matrix[siii][sjjj]=([m,i,j]).reduce((value, element) => value>element?value:element);
+         
       }  
   }
-  List sequ1 = [seq1[m-1]];
+   List sequ1 = [seq1[m-1]];
   List  sequ2 = [seq2[n-1]];
   while(m>1 && n>1){
-    List max1=[matrix[m-1][n-2], matrix[m-2][n-2], matrix[m-2][n-1]].reduce((value, element) =>value>element?value:element );
-    List max2=[matrix[m-1][n-2], matrix[m-2][n-2], matrix[m-2][n-1]].reduce((value, element) => value>element?value:element);
+   int max1=[matrix[m-1][n-2], matrix[m-2][n-2], matrix[m-2][n-1]].reduce((value, element) =>value>element?value:element );
+    int max2=[matrix[m-1][n-2], matrix[m-2][n-2], matrix[m-2][n-1]].reduce((value, element) => value>element?value:element);
     if(max1==matrix[m-2][n-2]){
        m -= 1;
         n -= 1;
@@ -53,74 +64,23 @@ for (int sjj=0;sjj<n;sjj++){
        sequ1.add(seq1[m-1]);
       sequ2.add('-');
     }
-    for(var i=0;i<sequ1.length/2;i++){
-        var temp = sequ1[i];
-        sequ1[i] = sequ1[sequ1.length-1-i];
-        sequ1[sequ1.length-1-i] = temp;
-        return sequ1;
-    }
-    for(var i=0;i<sequ2.length/2;i++){
-        var temp = sequ2[i];
-        sequ2[i] = sequ2[sequ2.length-1-i];
-        sequ2[sequ2.length-1-i] = temp;
-        return sequ2;
-    }
-   String align_seq1 = sequ1.join('');
-   String align_seq2=sequ2.join('') ;
-   double  align_score = .0;
-   for(int k=0;k<align_seq1.length;k++){
-     if(align_seq1[k]==align_seq2[k]){
+   }
+       List.from(sequ1.reversed);
+       var align_seq1=sequ1.join();
+      List.from(sequ2.reversed) ;
+      var align_seq2=sequ2.join();
+   double  align_score =0;
+     for(var k=0;k<sequ1.length;k++){
+     if(sequ1[k]==sequ2[k]){
        align_score += 1; 
      }
    }
  align_score=(align_score)/align_seq1.length;
-      alignment_score=align_score*100;
-    List aligns=[align_seq1 , align_seq2, align_score];
- return aligns;
+ alignment_score=alignment_score*100;
+     aligns=[align_seq1 , align_seq2, align_score];
+    return aligns;
   }
-}
-display(String seque1,String seque2){
-  int le=60;
-  while(seque1.length>=0){
-     Text('sequence1: ');
-     for(int a=seque1[le-40] as int;a<le;a++){
-       Text('$a');
-     }
-     Text("\n");
-        Text('           ');
-    for(int k=le-40;k<le;k++){
-       if (seque1[k] == seque2[k])  Text('|');
-            else Text(' ');
-    }
-    Text("\n");
-    Text('sequence2: ');
-    for(int b=seque2[le-40] as int;b<le;b++){
-       Text('$b');
-    }
-    Text("\n");
-     le += 40;
-     if(seque2.length>le-40){
-       Text('sequence1: ');
-       for(int a=seque2[le-40] as int;a<seque2.length;a++){
-          Text('$a');
-       }
-       Text("\n");
-        Text('           ');
-        for(int k=seque1[le-40] as int;k<seque1.length;k++){
-          if(seque1[k]==seque2[k]){
-            Text('|');
-          }
-          else{Text(' ');}
-          Text("\n");
-        Text('sequence2: ');
-        for(int b=seque2[le-40] as int;b<seque2.length;b++){
-          Text('$b');
-        }
-         Text("\n");
-        }
-     }
-  }
-}
+
 //transform base to numeric value
 List wordToNum(String word){
    List h=[];
@@ -149,6 +109,10 @@ num wordToIndex(String word,int wordlen){
   }  
   return tmp;
 }
+
+
+
+
 List getWordsPosition(String word){
   // assert (word.length==11);
    num seekIndex=wordToIndex(word,11-1);
@@ -169,7 +133,6 @@ List getWordsPosition(String word){
    return positions;
   
  }
- 
  String extractSeq(int chrIndex,int pos,int lenght)
  {
     pos=pos+(pos/60).floor();
@@ -236,7 +199,7 @@ List getWordsPosition(String word){
                  for (int i_start=0;i_start<15;i_start++)
                  {
                    var score = SMalignment(candidate_sequence,querySeq);
-                    i_start_indexs.add(score![0]);
+                    i_start_indexs.add(score[0]);
                      i_start_indexs.add(score[1]);
                       i_start_indexs.add(score[2]);
                       
@@ -265,9 +228,9 @@ List getWordsPosition(String word){
                        }
                      } 
                       candidate_sequence= candidate_sequence.sublist(i_start , -i_end);
-                     List <dynamic>  align_seq = SMalignment(candidate_sequence,querySeq)!;
+                       align_seq = SMalignment(candidate_sequence,querySeq);
 
-                    return Text('${display(align_seq[0], align_seq[1])}');
+                    return align_seq;
 
               }
 
@@ -277,6 +240,5 @@ List getWordsPosition(String word){
     }
     
  }
-
-}
+          }
  

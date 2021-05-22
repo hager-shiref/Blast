@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var blastDiscription =
-      "BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein sequence to database sequences and calculates the statistical significance.";
+      "BLAST finds regions of similarity between biological sequences. The program compares nucleotide or protein sequence to database sequences and  calculates the statistical significance.";
   // ignore: close_sinks
   YoutubePlayerController _controller = YoutubePlayerController(
     initialVideoId: 'v1r35aU3z8A',
@@ -225,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                           showAlertDialog(context);
                         },
                         child: Text(
-                          '        Learn More...',
+                          '              Learn More...',
                           style: TextStyle(
                               fontSize: 19,
                               fontFamily: 'font1',
@@ -296,8 +296,10 @@ class _HomePageState extends State<HomePage> {
         "Basic Local Alignment Search Tool",
         style: TextStyle(color: mainColor),
       ),
-      content: Text(
-          "BLAST finds regions of similarity between biological sequences.The program compares nucleotide or protein sequence to database sequences and calculates the statistical significance of matches. Blast can be used infer functional and evolutionary relationships between Sequences as well as help identify members of gene families."),
+      content: Expanded(
+              child: Text(
+            "BLAST finds regions of similarity between biological sequences.The program compares nucleotide or protein sequence to database sequences and calculates the statistical significance of matches. Blast can be used infer functional and evolutionary relationships between Sequences as well as help identify members of gene families."),
+      ),
       actions: [],
     );
 
